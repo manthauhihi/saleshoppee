@@ -1,0 +1,130 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tạo Link Shopee</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#ffe2d2;
+padding:40px;
+text-align:center;
+}
+
+.box{
+background:white;
+max-width:420px;
+margin:auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#ff5722;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:6px;
+font-size:16px;
+cursor:pointer;
+background:#ff5722;
+color:white;
+}
+
+.copy{
+background:#2196f3;
+}
+
+.fb{
+background:#1877f2;
+}
+
+.result{
+margin-top:10px;
+word-break:break-all;
+}
+
+img{
+width:100%;
+margin-top:15px;
+border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Tạo Link Shopee</h2>
+
+<input id="link" placeholder="Dán link Shopee vào đây">
+
+<button onclick="createLink()">Tạo Link</button>
+
+<div id="result" class="result"></div>
+
+<button class="copy" onclick="copyLink()">Copy Link</button>
+
+<a href="https://www.facebook.com/share/p/1BsQUAvTxj/" target="_blank">
+<button class="fb">Đi đến bài đăng Facebook</button>
+</a>
+
+<img src="z7616504655830_d56ca01855218f1c94509e0415fcdc6a.jpg">
+
+</div>
+
+<script>
+
+let generatedLink="";
+
+function createLink(){
+
+let link=document.getElementById("link").value;
+
+if(link==""){
+alert("Hãy dán link Shopee");
+return;
+}
+
+generatedLink=link+"?aff_id=17355200429";
+
+document.getElementById("result").innerText=generatedLink;
+
+}
+
+function copyLink(){
+
+if(generatedLink==""){
+alert("Chưa có link để copy");
+return;
+}
+
+navigator.clipboard.writeText(generatedLink);
+
+alert("Đã copy link");
+
+}
+
+</script>
+
+</body>
+</html>
+```
